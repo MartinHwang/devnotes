@@ -1,0 +1,25 @@
+/* CSS GRID */
+body{
+    display: grid;
+    grid-template-rows: 40px 500px 500px 20px;
+    grid-gap: 0.5rem;
+}
+
+header{
+    background: aqua;
+    color: white;
+}
+
+aside{
+    background: green;
+    color: white;
+}
+
+main{
+    background: deepskyblue;
+    color: white;
+}
+
+footer{
+    background: darkred;
+}
