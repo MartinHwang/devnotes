@@ -1,25 +1,35 @@
 /* CSS GRID */
 body{
     display: grid;
-    grid-template-rows: 40px 500px 500px 20px;
+    grid-template-rows: 40px 500px 30px;
+    grid-template-columns: 20% 79.7% 0.3%;
     grid-gap: 0.5rem;
 }
 
 header{
     background: aqua;
     color: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
 }
 
 aside{
     background: green;
     color: white;
+    grid-column-start: 1;
+    grid-column-end: 1;
 }
 
 main{
-    background: deepskyblue;
+    background: darkmagenta;
     color: white;
+    grid-column-start: 2;
+    grid-column-end: 2;
 }
 
 footer{
     background: darkred;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
