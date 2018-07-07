@@ -8,31 +8,31 @@
 
     <body>
         <header>
-            DevNotes
+            <h3>Header</h3>
         </header>
 
         <aside>
             <nav>
+                <p>Aside</p>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.php?p=home">Home</a></li>
+                    <li><a href="index.php?p=notes-css">CSS Notes</a></li>
+                    <li><a href="index.php?p=notes-js">JavaScript Notes</a></li>
                 </ul>
             </nav>
         </aside>
 
         <main>
-            <header>
-                <h1>Welcome</h1>
-            </header>
-
-            <div id="core">
-                <section>
-                    Hello Martin!
-                </section>
-
-                <section>
-                    Good work!
-                </section>
-            </div>
+            <?php
+            $validPages = ['home', 'notes-css', 'notes-js'];
+            $page = $_GET['p'];
+            
+            if (in_array($page, $validPages)) {
+                include($page . '.html');
+            } else {
+                echo "Invalid page.";
+            }
+            ?>
         </main>
 
         <footer>
