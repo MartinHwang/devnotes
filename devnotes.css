@@ -13,6 +13,9 @@ body > header {
     grid-column-end: 3;
 
 }
+body > a {
+
+}
 
 aside {
     background: green;
@@ -30,7 +33,7 @@ main {
     grid-template-rows: 15% 85%;
     grid-template-columns: repeat(2, 1fr);
     padding: 5px;
-    min-height: 20rem
+    min-height: 20rem;
 }
 
 main > header {
