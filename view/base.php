@@ -23,7 +23,7 @@
         </aside>
 
         <main>
-            <?php include $request . '.php'; ?>
+            <?php include $view; ?>
         </main>
 
         <footer>
