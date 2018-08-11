@@ -1,51 +1,57 @@
 /* CSS GRID */
 body {
-    display: grid;
-    grid-template-rows: 50px 1fr 30px;
+    display:               grid;
+    grid-template-rows:    50px 1fr 30px;
     grid-template-columns: 20% 1fr;
-    grid-gap: .5rem;
+    grid-gap:              .5rem;
 }
 
 body > header {
-    background: aqua;
-    color: white;
+    background:        aqua;
+    color:             white;
     grid-column-start: 1;
-    grid-column-end: 3;
-
+    grid-column-end:   3;
 }
-body > a {
 
+body > a {
 }
 
 aside {
-    background: green;
-    color: white;
+    background:        green;
+    color:             white;
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end:   2;
 }
 
 main {
-    background: darkmagenta;
-    color: white;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    display: grid;
-    grid-template-rows: 15% 85%;
+    background:            darkmagenta;
+    color:                 white;
+    grid-column-start:     2;
+    grid-column-end:       3;
+    display:               grid;
+    grid-template-rows:    15% 85%;
     grid-template-columns: repeat(2, 1fr);
-    padding: 5px;
-    min-height: 20rem;
+    padding:               5px;
+    min-height:            20rem;
 }
 
 main > header {
-    background: darkorange;
+    background:        darkorange;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end:   3;
 }
 
 body > footer {
-    background: darkred;
-    color: white;
-    text-align: center;
+    background:        darkred;
+    color:             white;
+    text-align:        center;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end:   3;
+}
+
+#core article {
+    background:    white;
+    border:        1px solid black;
+    color:         black;
+    margin-bottom: 1rem;
 }
