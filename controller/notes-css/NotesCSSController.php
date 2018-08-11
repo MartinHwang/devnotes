@@ -1,9 +1,9 @@
 <?php
 
 
-include_once 'model/notes-css/notes_css.php';
+include_once __DIR__ . '/../../model/notes-css/notes_css.php';
 
 $notes_css = getNotes();
-$view = 'view/notes-css/notesCssView.php';
+$view = __DIR__ . '/../../view/notes-css/notesCssView.php';
 
-include 'view/base.php';
+include __DIR__ . '/../../view/base.php';

@@ -1,8 +1,8 @@
 <?php
 
-include_once 'model/home/user.php';
+include_once __DIR__ . '/../../model/home/user.php';
 
 $users = getUsers();
-$view = 'view/home/homeView.php';
+$view = __DIR__ . '/../../view/home/homeView.php';
 
-include 'view/base.php';
+include __DIR__ . '/../../view/base.php';

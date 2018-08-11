@@ -1,5 +1,5 @@
 <?php
 
-$view = 'error.php';
+$view = __DIR__ . '/../view/error.php';
 
-include 'view/base.php';
+include __DIR__ . '/../view/base.php';
