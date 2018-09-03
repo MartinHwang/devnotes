@@ -16,7 +16,9 @@ trait PSQLTrait
         $dbPass = getenv('DB_PASS');
 
         // Connecting, selecting database
-        pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass")
+        $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass")
         or die('Could not connect: ' . pg_last_error());
+
+        return $db;
     }
 }

@@ -16,8 +16,8 @@
                 <p>Aside</p>
                 <ul>
                     <li><a href="/home">Home</a></li>
-                    <li><a href="/notes-css">CSS Notes</a></li>
-                    <li><a href="/notes-js">JavaScript Notes</a></li>
+                    <li><a href="/notes/css">CSS Notes</a></li>
+                    <li><a href="/notes/js">JavaScript Notes</a></li>
                 </ul>
             </nav>
         </aside>

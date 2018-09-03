@@ -17,18 +17,34 @@ class Router
     public function route()
     {
         $requestParts = explode('/', trim($_SERVER["REQUEST_URI"], '/'));
-        $request      = end($requestParts);
 
-        switch ($request) {
+        switch ($requestParts[0]) {
             case '':
             case 'home':
                 (new HomeController())->index();
                 break;
-            case 'notes-css':
-                (new CSSController())->index();
-                break;
-            case 'notes-js':
-                (new JSController())->index();
+            case 'notes':
+                switch ($requestParts[1]) {
+                    case 'css':
+                        $controller = new CSSController();
+                        $request    = $requestParts[2] ?? null;
+
+                        switch ($request) {
+                            case 'edit':
+                                $controller->edit($requestParts[3]);
+                                break;
+                            case 'show':
+                                $controller->show($requestParts[3]);
+                                break;
+                            default:
+                                $controller->index();
+                                break;
+                        }
+                        break;
+                    case 'js':
+                        (new JSController())->index();
+                        break;
+                }
                 break;
             default:
                 (new DefaultController())->error();
