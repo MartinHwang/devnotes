@@ -5,8 +5,8 @@
 <div id="core">
     <?php
         echo '<article>';
-            echo "<h2>{$note['title']}</h2>";
-            echo "<p>{$note['note']}</p>";
+            echo "<h2>{$note->title}</h2>";
+            echo "<pre>{$note->note}</pre>";
         echo '</article>';
     ?>
 </div>

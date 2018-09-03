@@ -4,21 +4,40 @@ namespace App\Model\Notes\CSS;
 
 use App\Model\PSQLTrait;
 
-/**
- * Returns CSS notes.
- */
 class CSS
 {
     use PSQLTrait;
 
     /**
-     * Returns CSS notes.
+     * Returns specified note.
+     *
+     * @param string $noteID ID of note
+     *
+     * @return CSSNote
+     */
+    public static function fetch(string $noteID): CSSNote
+    {
+        $db = self::connectPSQL();
+
+        $query = '
+            SELECT *
+            FROM "note"
+            WHERE "id" = $1';
+
+        $result     = pg_query_params($db, $query, [$noteID]) or die('Query failed: ' . pg_last_error());
+        $properties = pg_fetch_assoc($result);
+
+        return new CSSNote($properties);
+    }
+
+    /**
+     * Returns list of CSS notes.
      *
      * @return resource
      */
-    public function getNotes()
+    public static function getNotes()
     {
-        $this->connectPSQL();
+        self::connectPSQL();
 
         $query = '
             SELECT "title", "note"."note", "note"."id" FROM "category" AS cat
@@ -31,26 +50,4 @@ class CSS
 
         return $result;
     }
-
-    /**
-     * Returns specified note.
-     *
-     * @param string $note ID of note
-     *
-     * @return resource
-     */
-    public function note(string $note)
-    {
-        $db = $this->connectPSQL();
-
-        $query = '
-            SELECT *
-            FROM "note"
-            WHERE "id" = $1';
-
-        $result = pg_query_params($db, $query, [$note]) or die('Query failed: ' . pg_last_error());
-
-        return $result;
-    }
 }
-

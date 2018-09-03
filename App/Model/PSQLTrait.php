@@ -7,7 +7,7 @@ trait PSQLTrait
     /**
      * Connects to PostgreSQL database using DotEnv variables.
      */
-    private function connectPSQL()
+    private static function connectPSQL()
     {
         $dbHost = getenv('DB_HOST');
         $dbPort = getenv('DB_PORT');

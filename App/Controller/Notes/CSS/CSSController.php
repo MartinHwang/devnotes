@@ -8,37 +8,52 @@ use App\View;
 class CSSController
 {
     /**
+     * Displays edit form.
+     *
+     * @param string $noteID ID of note
+     */
+    public function edit(string $noteID)
+    {
+        $data['note'] = CSS::fetch($noteID);
+
+        (new View())->view('notes-css/edit', $data);
+    }
+
+    /**
+     * Edits note.
+     */
+    public function doEdit()
+    {
+        $note = CSS::fetch($_POST['id']);
+
+        $note->note  = $_POST['note'] ?? null;;
+        $note->title = $_POST['title'] ?? '';
+
+        $note->save();
+
+        // (new View())->view('notes-css/edit', $data);
+    }
+
+    /**
      * Displays landing page.
      *
      * @return void
      */
     public function index(): void
     {
-        $data['notes_css'] = (new CSS)->getNotes();
+        $data['notes_css'] = CSS::getNotes();
 
         (new View())->view('notes-css/index', $data);
     }
 
     /**
-     * Displays edit form.
-     *
-     * @param string $note ID of note
-     */
-    public function edit(string $note)
-    {
-        echo "Note ID: $note";
-    }
-
-    /**
      * Displays note.
      *
-     * @param string $note ID of note
+     * @param string $noteID ID of note
      */
-    public function show(string $note)
+    public function show(string $noteID)
     {
-        $noteData = (new CSS)->note($note);
-
-        $data['note'] = pg_fetch_assoc($noteData);
+        $data['note'] = CSS::fetch($noteID);
 
         (new View())->view('notes-css/show', $data);
     }

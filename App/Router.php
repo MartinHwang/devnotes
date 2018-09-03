@@ -33,6 +33,9 @@ class Router
                             case 'edit':
                                 $controller->edit($requestParts[3]);
                                 break;
+                            case 'doEdit':
+                                $controller->doEdit();
+                                break;
                             case 'show':
                                 $controller->show($requestParts[3]);
                                 break;
