@@ -8,14 +8,51 @@ use App\View;
 class JSController
 {
     /**
+     * Displays edit form.
+     *
+     * @param string $noteID of note
+     */
+    public function edit(string $noteID)
+    {
+        $data['note'] = JS::fetch($noteID);
+
+        (new View())->view('notes-js/edit', $data);
+    }
+
+    /**
+     * Edits note.
+     */
+    public function doEdit()
+    {
+        $note = JS::fetch($_POST['id']);
+
+        $note->note  = $_POST['note'] ?? null;;
+        $note->title = $_POST['title'] ?? '';
+
+        $note->save();
+    }
+
+    /**
      * Displays landing page.
      *
      * @return void
      */
-    public function index():void
+    public function index(): void
     {
-        $data['notes_js'] = (new JS)->getNotes();
+        $data['notes_js'] = JS::getNotes();
 
-        (new View())->view('notes-js/notesJsView', $data);
+        (new View())->view('notes-js/index', $data);
+    }
+
+    /**
+     * Displays note.
+     *
+     * @param string $noteID ID of note
+     */
+    public function show(string $noteID)
+    {
+        $data['note'] = JS::fetch($noteID);
+
+        (new View())->view('notes-js/show', $data);
     }
 }

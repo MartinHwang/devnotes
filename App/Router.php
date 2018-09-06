@@ -45,7 +45,23 @@ class Router
                         }
                         break;
                     case 'js':
-                        (new JSController())->index();
+                        $controller = new JSController();
+                        $request    = $requestParts[2] ?? null;
+
+                        switch ($request) {
+                            case 'edit':
+                                $controller->edit($requestParts[3]);
+                                break;
+                            case 'doEdit':
+                                $controller->doEdit();
+                                break;
+                            case 'show':
+                                $controller->show($requestParts[3]);
+                                break;
+                            default:
+                                $controller->index();
+                                break;
+                        }
                         break;
                 }
                 break;

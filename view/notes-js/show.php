@@ -4,11 +4,9 @@
 
 <div id="core">
     <?php
-    while ($row = pg_fetch_assoc($notes_js)) {
         echo '<article>';
-        echo "<h2>{$row['title']}</h2>";
-        echo "<p>{$row['note']}</p>";
+            echo "<h2>{$note->title}</h2>";
+            echo "<pre>{$note->note}</pre>";
         echo '</article>';
-    }
     ?>
 </div>
