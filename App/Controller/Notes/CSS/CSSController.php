@@ -31,7 +31,9 @@ class CSSController
 
         $note->save();
 
-        // (new View())->view('notes-css/edit', $data);
+        $_SESSION['message'] = 'Note edited.';
+
+        header('Location: /notes/css/show/' . $note->id, true, 303);
     }
 
     /**

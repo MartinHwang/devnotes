@@ -30,6 +30,10 @@ class JSController
         $note->title = $_POST['title'] ?? '';
 
         $note->save();
+
+        $_SESSION['message'] = 'Note edited.';
+
+        header('Location: /notes/js/show/' . $note->id, true, 303);
     }
 
     /**

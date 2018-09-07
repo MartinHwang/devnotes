@@ -39,7 +39,7 @@ main {
     grid-column-start:     2;
     grid-column-end:       3;
     display:               grid;
-    grid-template-rows:    15% 85%;
+    grid-auto-rows:        min-content;
     grid-template-columns: repeat(2, 1fr);
     padding:               5px;
     min-height:            20rem;

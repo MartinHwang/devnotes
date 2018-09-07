@@ -23,6 +23,7 @@
         </aside>
 
         <main>
+            <?php echo $message; ?>
             <?php include $contents; ?>
         </main>
 
