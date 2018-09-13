@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
-class View
+trait ViewTrait
 {
     /**
      * Returns view.
@@ -18,9 +18,9 @@ class View
 
         extract($data);
 
-        $contents = __DIR__ . "/../view/{$view}.php";
+        $contents = __DIR__ . "/../../view/{$view}.php";
 
-        include __DIR__ . "/../view/base.php";
+        include __DIR__ . "/../../view/base.php";
 
         unset($_SESSION['message']);
     }

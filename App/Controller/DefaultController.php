@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
-use App\View;
+use App\Model\ViewTrait;
 
 class DefaultController
 {
+    use ViewTrait;
+
     /**
      * Displays error page.
      *
@@ -13,6 +15,6 @@ class DefaultController
      */
     public function error(): void
     {
-        (new View())->view('error');
+        $this->view('error');
     }
 }

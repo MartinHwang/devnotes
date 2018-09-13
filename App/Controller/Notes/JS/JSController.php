@@ -3,10 +3,12 @@
 namespace App\Controller\Notes\JS;
 
 use App\Model\Notes\JS\JS;
-use App\View;
+use App\Model\ViewTrait;
 
 class JSController
 {
+    use ViewTrait;
+
     /**
      * Displays delete confirmation.
      *
@@ -16,7 +18,7 @@ class JSController
     {
         $data['note'] = JS::fetch($noteID);
 
-        (new View())->view('notes-js/delete', $data);
+        $this->view('notes-js/delete', $data);
     }
 
     /**
@@ -42,7 +44,7 @@ class JSController
     {
         $data['note'] = JS::fetch($noteID);
 
-        (new View())->view('notes-js/edit', $data);
+        $this->view('notes-js/edit', $data);
     }
 
     /**
@@ -71,7 +73,7 @@ class JSController
     {
         $data['notes_js'] = JS::getNotes();
 
-        (new View())->view('notes-js/index', $data);
+        $this->view('notes-js/index', $data);
     }
 
     /**
@@ -83,6 +85,6 @@ class JSController
     {
         $data['note'] = JS::fetch($noteID);
 
-        (new View())->view('notes-js/show', $data);
+        $this->view('notes-js/show', $data);
     }
 }

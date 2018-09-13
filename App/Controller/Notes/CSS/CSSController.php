@@ -3,10 +3,12 @@
 namespace App\Controller\Notes\CSS;
 
 use App\Model\Notes\CSS\CSS;
-use App\View;
+use App\Model\ViewTrait;
 
 class CSSController
 {
+    use ViewTrait;
+
     /**
      * Displays delete confirmation.
      *
@@ -16,7 +18,7 @@ class CSSController
     {
         $data['note'] = CSS::fetch($noteID);
 
-        (new View())->view('notes-css/delete', $data);
+        $this->view('notes-css/delete', $data);
     }
 
     /**
@@ -42,7 +44,7 @@ class CSSController
     {
         $data['note'] = CSS::fetch($noteID);
 
-        (new View())->view('notes-css/edit', $data);
+        $this->view('notes-css/edit', $data);
     }
 
     /**
@@ -71,7 +73,7 @@ class CSSController
     {
         $data['notes_css'] = CSS::getNotes();
 
-        (new View())->view('notes-css/index', $data);
+        $this->view('notes-css/index', $data);
     }
 
     /**
@@ -83,6 +85,6 @@ class CSSController
     {
         $data['note'] = CSS::fetch($noteID);
 
-        (new View())->view('notes-css/show', $data);
+        $this->view('notes-css/show', $data);
     }
 }

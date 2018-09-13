@@ -3,10 +3,12 @@
 namespace App\Controller\Home;
 
 use App\Model\Home\User;
-use App\View;
+use App\Model\ViewTrait;
 
 class HomeController
 {
+    use ViewTrait;
+
     /**
      * Displays landing page.
      *
@@ -16,6 +18,6 @@ class HomeController
     {
         $data['users'] = (new User)->getUsers();
 
-        (new View())->view('home/homeView', $data);
+        $this->view('home/homeView', $data);
     }
 }
