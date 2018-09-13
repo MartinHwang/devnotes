@@ -8,6 +8,32 @@ use App\View;
 class CSSController
 {
     /**
+     * Displays delete confirmation.
+     *
+     * @param string $noteID ID of note
+     */
+    public function delete(string $noteID)
+    {
+        $data['note'] = CSS::fetch($noteID);
+
+        (new View())->view('notes-css/delete', $data);
+    }
+
+    /**
+     * Deletes note.
+     */
+    public function doDelete()
+    {
+        $note = CSS::fetch($_POST['id']);
+
+        $note->delete();
+
+        $_SESSION['message'] = 'Note deleted.';
+
+        header('Location: /notes/css', true, 303);
+    }
+
+    /**
      * Displays edit form.
      *
      * @param string $noteID ID of note

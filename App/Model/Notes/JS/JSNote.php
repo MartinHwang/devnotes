@@ -25,6 +25,19 @@ class JSNote
     }
 
     /**
+     * Deletes note.
+     *
+     * @return void
+     */
+    public function delete(): void
+    {
+        $db = self::connectPSQL();
+
+        pg_delete($db, 'cat_note', ['note' => $this->id]);
+        pg_delete($db, 'note', ['id' => $this->id]);
+    }
+
+    /**
      * Saves note.
      */
     public function save()

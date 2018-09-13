@@ -8,7 +8,7 @@
             echo '<ul>';
                 echo "<li><a href='/notes/js/show/{$row['id']}'>{$row['title']}</a> 
                         <a href='/notes/js/edit/{$row['id']}'>Edit</a>
-                        <a href='#{$row['id']}'>Delete</a></li>";
+                        <a href='/notes/js/delete/{$row['id']}'>Delete</a></li>";
             echo '</ul>';
         }
     ?>

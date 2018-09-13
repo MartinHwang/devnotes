@@ -39,6 +39,12 @@ class Router
                             case 'show':
                                 $controller->show($requestParts[3]);
                                 break;
+                            case 'delete':
+                                $controller->delete($requestParts[3]);
+                                break;
+                            case 'doDelete':
+                                $controller->doDelete();
+                                break;
                             default:
                                 $controller->index();
                                 break;
@@ -57,6 +63,12 @@ class Router
                                 break;
                             case 'show':
                                 $controller->show($requestParts[3]);
+                                break;
+                            case 'delete':
+                                $controller->delete($requestParts[3]);
+                                break;
+                            case 'doDelete':
+                                $controller->doDelete();
                                 break;
                             default:
                                 $controller->index();

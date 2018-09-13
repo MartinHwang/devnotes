@@ -8,6 +8,32 @@ use App\View;
 class JSController
 {
     /**
+     * Displays delete confirmation.
+     *
+     * @param string $noteID ID of note
+     */
+    public function delete(string $noteID)
+    {
+        $data['note'] = JS::fetch($noteID);
+
+        (new View())->view('notes-js/delete', $data);
+    }
+
+    /**
+     * Deletes note.
+     */
+    public function doDelete()
+    {
+        $note = JS::fetch($_POST['id']);
+
+        $note->delete();
+
+        $_SESSION['message'] = 'Note deleted.';
+
+        header('Location: /notes/js', true, 303);
+    }
+
+    /**
      * Displays edit form.
      *
      * @param string $noteID of note

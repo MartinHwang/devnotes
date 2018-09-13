@@ -41,7 +41,7 @@ class JS
 
         $query = '
             SELECT "title", "note"."note", "note"."id" FROM "category" AS cat
-            LEFT JOIN "cat_note" AS cn ON cat."id" = cn."cat"
+            RIGHT JOIN "cat_note" AS cn ON cat."id" = cn."cat"
             LEFT JOIN "note" ON cn."note" = "note"."id"
             WHERE cat."id" = 2
             ORDER BY "note"."title"';
