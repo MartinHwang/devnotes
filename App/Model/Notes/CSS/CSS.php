@@ -9,6 +9,31 @@ class CSS
     use PSQLTrait;
 
     /**
+     * Stores and returns CSSNote.
+     *
+     * @param array $properties
+     *
+     * @return CSSNote
+     */
+    public static function create(array $properties): CSSNote
+    {
+        $db = self::connectPSQL();
+
+        $params = [
+            $properties['note'],
+            $properties['title'],
+        ];
+
+        $sql     = 'INSERT INTO "note" ("note", "title") VALUES ($1, $2) RETURNING "id", "note", "title"';
+        $query   = pg_query_params($db, $sql, $params);
+        $results = pg_fetch_assoc($query);
+
+        pg_insert($db, 'cat_note', ['cat' => 1, 'note' => $results['id']]);
+
+        return new CSSNote($results);
+    }
+
+    /**
      * Returns specified note.
      *
      * @param string $noteID ID of note

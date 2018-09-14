@@ -10,6 +10,26 @@ class CSSController
     use ViewTrait;
 
     /**
+     * Displays create form.
+     */
+    public function create()
+    {
+        $this->view('notes-css/create');
+    }
+
+    /**
+     * Creates note.
+     */
+    public function doCreate()
+    {
+        $note = CSS::create($_POST);
+
+        $_SESSION['message'] = 'Note created.';
+
+        header("Location: /notes/css/edit/{$note->id}", true, 303);
+    }
+
+    /**
      * Displays delete confirmation.
      *
      * @param string $noteID ID of note
