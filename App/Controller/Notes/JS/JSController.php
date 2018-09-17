@@ -10,6 +10,26 @@ class JSController
     use ViewTrait;
 
     /**
+     * Displays create form.
+     */
+    public function create()
+    {
+        $this->view('notes-js/create');
+    }
+
+    /**
+     * Creates note.
+     */
+    public function doCreate()
+    {
+        $note = JS::create($_POST);
+
+        $_SESSION['message'] = 'Note created.';
+
+        header("Location: /notes/js/edit/{$note->id}", true, 303);
+    }
+
+    /**
      * Displays delete confirmation.
      *
      * @param string $noteID ID of note

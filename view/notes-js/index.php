@@ -12,4 +12,6 @@
             echo '</ul>';
         }
     ?>
+    <hr>
+    <a href='/notes/js/create/'>Create New Note</a>
 </div>

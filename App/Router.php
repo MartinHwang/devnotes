@@ -61,6 +61,12 @@ class Router
                         $request    = $requestParts[2] ?? null;
 
                         switch ($request) {
+                            case 'create':
+                                $controller->create();
+                                break;
+                            case 'doCreate':
+                                $controller->doCreate();
+                                break;
                             case 'edit':
                                 $controller->edit($requestParts[3]);
                                 break;
