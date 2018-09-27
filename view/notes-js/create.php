@@ -1,5 +1,5 @@
 <header>
-    <p>JS Notes</p>
+    <h1>JS Notes</h1>
 </header>
 
 <div id="core">
@@ -10,6 +10,6 @@
         <label>Note
             <textarea name="note"></textarea></label>
 
-        <button type="submit">Create</button>
+        <button type="submit"><span class="material-icons md-18">save</span>Create</button>
     </form>
 </div>

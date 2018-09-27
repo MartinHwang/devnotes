@@ -3,17 +3,19 @@
 <html>
     <head>
         <title>DevNotes</title>
+
         <link rel="stylesheet" type="text/css" href="/devnotes.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans:700|Noto+Serif+KR|Material+Icons" rel="stylesheet">
     </head>
 
     <body>
         <header>
-            <h3>Header</h3>
+            <span>DevNotes</span>
         </header>
 
         <aside>
             <nav>
-                <p>Aside</p>
                 <ul>
                     <li><a href="/home">Home</a></li>
                     <li><a href="/notes/css">CSS Notes</a></li>
@@ -23,12 +25,13 @@
         </aside>
 
         <main>
-            <?php echo $message; ?>
+            <?php if (isset($message)) { echo "<div id='notice'>$message</div>"; } ?>
+
             <?php include $contents; ?>
         </main>
 
         <footer>
-            &copy; 2018 Inchul Hwang
+            &copy; 2018 Martin Hwang
         </footer>
     </body>
 </html>

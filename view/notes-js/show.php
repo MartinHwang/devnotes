@@ -1,12 +1,10 @@
 <header>
-    <p>Javascript Notes</p>
+    <h1>Javascript Notes</h1>
 </header>
 
 <div id="core">
-    <?php
-        echo '<article>';
-            echo "<h2>{$note->title}</h2>";
-            echo "<pre>{$note->note}</pre>";
-        echo '</article>';
-    ?>
+    <div>
+        <h2><?= $note->title ?></h2>
+        <div class="reset"><?= $note->note ?></div>
+    </div>
 </div>

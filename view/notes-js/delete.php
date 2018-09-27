@@ -1,5 +1,5 @@
 <header>
-    <p>JS Notes</p>
+    <h1>JS Notes</h1>
 </header>
 
 <div id="core">
@@ -12,6 +12,6 @@
 
         <input name="id" type="hidden" value="<?= $note->id ?>">
 
-        <button type="submit">Delete</button>
+        <button type="submit"><span class="material-icons md-18">delete</span>Delete</button>
     </form>
 </div>

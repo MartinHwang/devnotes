@@ -1,5 +1,5 @@
 <header>
-    <p>Javascript Notes</p>
+    <h1>Javascript Notes</h1>
 </header>
 
 <div id="core">
@@ -12,6 +12,6 @@
 
         <input name="id" type="hidden" value="<?= $note->id ?>">
 
-        <button type="submit">Save</button>
+        <button type="submit"><span class="material-icons md-18">save</span>Save</button>
     </form>
 </div>
