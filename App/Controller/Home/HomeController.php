@@ -16,8 +16,6 @@ class HomeController
      */
     public function index(): void
     {
-        $data['users'] = (new User)->getUsers();
-
-        $this->view('home/homeView', $data);
+        $this->view('home/homeView');
     }
 }

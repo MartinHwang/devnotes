@@ -4,14 +4,16 @@
     <head>
         <title>DevNotes</title>
 
-        <link rel="stylesheet" type="text/css" href="/devnotes.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans:700|Noto+Serif+KR|Material+Icons">
 
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans:700|Noto+Serif+KR|Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/style/devnotes.css" id="baseCSS">
+
+        <script src="/devnotes.js"></script>
     </head>
 
     <body>
         <header>
-            <span>DevNotes</span>
+            <a href="/home"><span>DevNotes</span></a>
         </header>
 
         <aside>

@@ -1,0 +1,301 @@
+/* DevNotes : Martin Hwang : resume@martinhwang.ca */
+/*
+#f4f9ff white
+#000b19 black
+
+#89bcff blue lighter
+#0070f0 blue light
+#0049a3 blue medium
+#002352 blue dark
+
+#ffbc66 orange
+
+#0049a3 link
+#0070f0 active/hover
+#001430 visited
+*/
+
+html {
+    font-size: 18px;
+}
+
+body {
+    background:            #000b19;
+    display:               grid;
+    font-family:           'Noto Serif KR', serif;
+    font-size:             16px;
+    line-height:           1rem;
+    grid-gap:              .5rem;
+    grid-template-columns: 1fr 50rem 14rem 1fr;
+    grid-template-rows:    auto 1fr auto;
+}
+
+body > header {
+    background:    #0049a3;
+    border-radius: .5rem;
+    grid-column:   3/4;
+    overflow:      hidden;
+    padding:       1rem;
+}
+
+body > header span {
+    color:       #f4f9ff;
+    font-family: 'Noto Sans', sans-serif;
+    font-size:   2.6rem;
+    line-height: 1.9rem;
+}
+
+body > header a:active,
+body > header a:hover,
+body > header a:link,
+body > header a:visited {
+    text-decoration: none;
+}
+
+aside {
+    background:    #0049a3;
+    border-radius: .5rem;
+    color:         #f4f9ff;
+    font-family:   'Noto Sans', sans-serif;
+    grid-column:   3/4;
+    grid-row:      2/4;
+    padding:       1rem;
+}
+
+aside li {
+    list-style:    none;
+    margin-bottom: .5rem;
+}
+
+aside nav {
+    font-size:   1rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+aside nav a:active,
+aside nav a:hover,
+aside nav a:link,
+aside nav a:visited {
+    color: #f4f9ff;
+}
+
+aside nav ul {
+    margin:  0;
+    padding: 0;
+}
+
+main {
+    background:    #f4f9ff;
+    border-radius: .5rem;
+    color:         #000b19;
+    grid-column:   2/3;
+    grid-row:      1/3;
+}
+
+#notice {
+    animation:     fadeout 5s;
+    background:    #ffbc66;
+    border-radius: .5rem .5rem 0 0;
+    font-weight:   bold;
+    opacity:       0;
+    padding:       .5rem;
+}
+
+#core {
+    margin: 0 1rem 1rem;
+}
+
+body > footer {
+    background:    #0049a3;
+    border-radius: .5rem;
+    color:         #f4f9ff;
+    font-family:   'Noto Sans', sans-serif;
+    font-size:     12px;
+    line-height:   1rem;
+    grid-column:   2/3;
+    text-align:    center;
+}
+
+/* -----------------------------------------------------------------*/
+
+a:link {
+    color:           #0049a3;
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    color:           #0070f0;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #001430;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Noto Sans', sans-serif;
+    margin:      1rem 0;
+}
+
+h1 {
+    color:          #000b19;
+    font-size:      2rem;
+    line-height:    1;
+    margin:         1rem;
+    text-transform: capitalize;
+}
+
+h2 {
+    color:          #0049a3;
+    font-size:      1.5rem;
+    line-height:    2rem;
+    text-transform: capitalize;
+}
+
+h3 {
+    color:          #000b19;
+    font-size:      1rem;
+    line-height:    1;
+    text-transform: uppercase;
+}
+
+hr {
+    background: #002352;
+    border:     none;
+    color:      #002352;
+    height:     2px;
+}
+
+a.actions {
+    font-family: 'Noto Sans', sans-serif;
+    font-size:   1rem;
+    font-weight: bold;
+    line-height: 1rem;
+}
+
+a.actions:link,
+a.actions:visited {
+    color: #0049a3;
+}
+
+a.actions:active,
+a.actions:hover {
+    color: #0070f0;
+}
+
+.list {
+    padding-left: 1rem;
+}
+
+.list.objectList a:link,
+.list.objectList a:visited {
+    color: #0049a3;
+}
+
+.list.objectList a:active,
+.list.objectList a:hover {
+    color: #0070f0;
+}
+
+.list.objectList li a:nth-child(2) .material-icons {
+    margin-left: 1rem;
+}
+
+/* Animation -------------------------------------------------------*/
+
+@keyframes fadeout {
+    0% { opacity: 1; }
+    65% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Material Icons --------------------------------------------------*/
+
+.material-icons {
+    vertical-align: bottom;
+    margin-right:   .5rem;
+}
+
+.material-icons:hover {
+    color:           #0070f0;
+    text-decoration: underline;
+}
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+/* Notes -----------------------------------------------------------*/
+
+.reset { }
+
+/* Forms -----------------------------------------------------------*/
+
+form {
+    width: 50%;
+}
+
+form::after {
+    clear:   both;
+    content: "";
+    display: block;
+}
+
+label {
+    display:       block;
+    font-family:   'Noto Sans', sans-serif;
+    font-weight:   bold;
+    margin-bottom: 1rem;
+    text-indent:   .5rem;
+}
+
+label input,
+label select,
+label textarea {
+    background:    white;
+    border:        1px solid #0049a3;
+    border-radius: .5rem;
+    box-sizing:    border-box;
+    font-family:   'Noto Serif KR', serif;
+    font-weight:   normal;
+    font-size:     1em;
+    margin-top:    .25rem;
+    min-width:     20rem;
+    padding:       .25rem .5rem;
+    width:         100%;
+}
+
+label select {
+    display: block;
+    width:   50%;
+}
+
+label textarea {
+    height: 6rem;
+}
+
+button {
+    background:    #89bcff;
+    border-radius: .3rem;
+    border:        1px solid #0049a3;
+    cursor:        pointer;
+    float:         right;
+    padding:       .5rem;
+}
+
+button:active,
+button:focus,
+button:hover {
+    background: #0049a3;
+    color:      #f4f9ff;
+}
+
+fieldset legend {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* -----------------------------------------------------------------*/

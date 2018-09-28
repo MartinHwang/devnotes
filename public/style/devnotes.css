@@ -44,6 +44,13 @@ body > header span {
     line-height: 3.8rem;
 }
 
+body > header a:active,
+body > header a:hover,
+body > header a:link,
+body > header a:visited {
+    text-decoration: none;
+}
+
 aside {
     background:    #0049a3;
     border-radius: .5rem;
@@ -232,7 +239,13 @@ form {
     width: 50%;
 }
 
-form label {
+form::after {
+    clear:   both;
+    content: "";
+    display: block;
+}
+
+label {
     display:       block;
     font-family:   'Noto Sans', sans-serif;
     font-weight:   bold;
@@ -240,8 +253,9 @@ form label {
     text-indent:   .5rem;
 }
 
-form label input,
-form label textarea {
+label input,
+label select,
+label textarea {
     background:    white;
     border:        1px solid #0049a3;
     border-radius: .5rem;
@@ -255,11 +269,16 @@ form label textarea {
     width:         100%;
 }
 
-form label textarea {
+label select {
+    display: block;
+    width:   50%;
+}
+
+label textarea {
     height: 6rem;
 }
 
-form button {
+button {
     background:    #89bcff;
     border-radius: .3rem;
     border:        1px solid #0049a3;
@@ -268,17 +287,15 @@ form button {
     padding:       .5rem;
 }
 
-form button:active,
-form button:focus,
-form button:hover {
+button:active,
+button:focus,
+button:hover {
     background: #0049a3;
     color:      #f4f9ff;
 }
 
-form::after {
-    clear:   both;
-    content: "";
-    display: block;
+fieldset legend {
+    font-family: 'Noto Sans', sans-serif;
 }
 
 /* -----------------------------------------------------------------*/

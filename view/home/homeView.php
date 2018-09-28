@@ -3,15 +3,11 @@
 </header>
 
 <div id="core">
-    <table>
-    <?php
-    while ($line = pg_fetch_array($users, null, PGSQL_ASSOC)) {
-        echo '<tr>';
-            foreach ($line as $col_value) {
-                echo "<td>$col_value</td>";
-            }
-        echo '</tr>';
-    }
-    ?>
-    </table>
+    <label>Select a Style
+        <select id="styleSelector">
+            <option disabled selected>Select a Style</option>
+            <option value="devnotes">Default</option>
+            <option value="king">Content is King</option>
+        </select>
+    </label>
 </div>
