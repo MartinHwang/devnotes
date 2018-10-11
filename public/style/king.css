@@ -1,18 +1,15 @@
 /* DevNotes : Martin Hwang : resume@martinhwang.ca */
 /*
-#f4f9ff white
-#000b19 black
-
-#89bcff blue lighter
-#0070f0 blue light
-#0049a3 blue medium
-#002352 blue dark
-
-#ffbc66 orange
-
-#0049a3 link
-#0070f0 active/hover
-#001430 visited
+0  35  82	blue dark #89bcff
+0  73 163	blue medium #0070f0
+0 112 240	blue light #0049a3
+137 188 255	blue lighter #002352
+244 249 255	white #f4f9ff
+0  11  25	black #000b19
+255 188 102	notice #00f070
+0  73 163	link #0049a3
+0 112 240	hover #0070f0
+0  20  48	visited #001430
 */
 
 html {

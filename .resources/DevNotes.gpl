@@ -1,0 +1,24 @@
+GIMP Palette
+Name: DevNotes
+Columns: 2
+#
+0  35  82	blue dark #89bcff
+0  82  35	green dark #005223
+0  73 163	blue medium #0070f0
+0 163  73	green medium #00a349
+0 112 240	blue light #0049a3
+0 240 112	green light #00f070
+137 188 255	blue lighter #002352
+137 255 188	green lighter #89ffbc
+244 249 255	white #f4f9ff
+244 255 249	white #f4fff9
+0  11  25	black #000b19
+0  25  11	black #00190b
+255 188 102	notice #00f070
+255 188 102	notice #0049a3
+0  73 163	link #0049a3
+0 163  73	link #00a349
+0 112 240	hover #0070f0
+0 240 112	hover #00f070
+0  20  48	visited #001430
+0  48  20	visited #003014

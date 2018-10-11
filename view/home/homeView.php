@@ -10,4 +10,13 @@
             <option value="king">Content is King</option>
         </select>
     </label>
+
+    <label>Select a Sub-Style
+        <select id="subStyleSelector">
+            <option disabled selected>Select a Sub-Style</option>
+            <option value="left">파란색 (왼쪽)</option>
+            <option value>파란색 (오른쪽)</option>
+            <option value="green">Green (녹색)</option>
+        </select>
+    </label>
 </div>

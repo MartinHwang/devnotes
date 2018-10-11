@@ -1,0 +1,26 @@
+/* DevNotes : Martin Hwang : resume@martinhwang.ca */
+
+body {
+    display:               grid;
+    grid-gap:              .5rem;
+    grid-template-columns: 1fr 14rem 50rem 1fr;
+    grid-template-rows:    auto 1fr auto;
+}
+
+body > header {
+    grid-column:   2/3;
+}
+
+aside {
+    grid-column:   2/3;
+    grid-row:      2/4;
+}
+
+main {
+    grid-column:   3/4;
+    grid-row:      1/4;
+}
+
+body > footer {
+    grid-column:   2/4;
+}
