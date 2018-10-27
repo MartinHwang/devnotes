@@ -8,6 +8,7 @@
             <option disabled selected>Select a Style</option>
             <option value="devnotes">Default</option>
             <option value="king">Content is King</option>
+            <option value="bookshelf">Bookshelf</option>
         </select>
     </label>
 

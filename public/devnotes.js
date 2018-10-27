@@ -1,4 +1,4 @@
-const selectedStyle = localStorage.getItem('styleCSS');
+let selectedStyle = localStorage.getItem('styleCSS');
 
 if (selectedStyle) {
     const selectedSubStyle = localStorage.getItem('subStyleCSS');
@@ -22,16 +22,18 @@ window.addEventListener('load', () => {
 
     if (styleSelector) {
         styleSelector.addEventListener('change', e => {
-            const newCSS = '/style/' + e.target.value + '.css';
+            const newCSS   = '/style/' + e.target.value + '.css';
+            const subStyle = document.getElementById('subStyle');
 
             baseCSS.href = newCSS;
-
             localStorage.setItem('styleCSS', newCSS);
+            selectedStyle = newCSS;
 
-            // Remove substyle on style change
-            document.getElementById('subStyle').remove();
-
-            localStorage.removeItem('subStyleCSS');
+            // Remove sub-style on style change
+            if (subStyle) {
+                subStyle.remove();
+                localStorage.removeItem('subStyleCSS');
+            }
         });
     }
 
@@ -39,7 +41,7 @@ window.addEventListener('load', () => {
 
     if (selectedStyle && subStyleSelector) {
         subStyleSelector.addEventListener('change', e => {
-            let subStyle = document.getElementById('subStyle');
+            const subStyle = document.getElementById('subStyle');
 
             if (e.target.value) {
                 const newCSS      = selectedStyle.replace('.css', '-' + e.target.value + '.css');
@@ -58,9 +60,8 @@ window.addEventListener('load', () => {
 
                 localStorage.setItem('subStyleCSS', newCSS);
 
-            } else {
-                document.getElementById('subStyle').remove();
-
+            } else if (subStyle) {
+                subStyle.remove();
                 localStorage.removeItem('subStyleCSS');
             }
         });

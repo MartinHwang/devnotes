@@ -4,7 +4,7 @@
     <head>
         <title>DevNotes</title>
 
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans:700|Noto+Serif+KR|Material+Icons">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans:700|Noto+Serif+KR|Old+Standard+TT:700|Pacifico|Material+Icons">
 
         <link rel="stylesheet" type="text/css" href="/style/devnotes.css" id="baseCSS">
 
